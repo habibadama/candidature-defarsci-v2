@@ -1,0 +1,64 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.navMenu{
+    background-color: #fff;
+    padding: 30px 20px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+    color: #000;
+    border-bottom: 2px solid #85addb;
+}
+.navMenu .navbar-brand{
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+nav .navbar-nav .nav-item{
+    transition: 300ms ease;
+}
+nav .navbar-nav .nav-item:not(:last-child):hover a{
+    color: #0b5ed7;
+    font-weight: 400;
+}
+nav .navbar-nav .nav-item .logIn{
+    padding: 5px 20px;
+    color: #000;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 300ms ease;
+}
+nav .navbar-nav .nav-item .logIn:hover{
+    background-color: #0b5ed7;
+    color: #fff;
+}
+
+
+/* Bannière img */
+
+.banniere-img{
+    background-image: url(../images/banniere-img.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+}
+#section-banniere .card{
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    color: #000;
+    position: absolute;
+    top: 50%;
+    transform: translate(2%, -50%);
+}
+
+
+@media screen and (max-width:976px) {
+    #section-banniere .card{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

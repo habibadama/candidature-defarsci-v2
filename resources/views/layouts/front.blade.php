@@ -12,10 +12,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/styles.css') }}">
     @yield('scripts')
 
     <!-- Scripts -->
@@ -23,9 +25,9 @@
     @yield('style')
 </head>
 <body class="font-sans antialiased">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-4 shadow-lg">
+    <nav class="navbar navbar-expand-lg fixed-top navMenu">
         <div class="container-fluid d-flex align-items-center">
-            <a class="navbar-brand font-weight-bold text-dark  d-flex justify-content-center align-items-center gap-2" href="/">
+            <a class="navbar-brand" href="/">
                DEFARSCI FORM
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,26 +37,25 @@
                 <ul class="navbar-nav ms-auto">
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('liste.candidat') }}">Candidatures</a>
+                            <a class="nav-link" href="{{ route('liste.candidat') }}">CANDIDATURES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('liste.module') }}">Modules</a>
+                            <a class="nav-link" href="{{ route('liste.module') }}">MODULES</a>
                         </li>
                         @if(Auth::user()->admin)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="nav-link" href="{{ route('dashboard') }}">DASHBOARD</a>
                             </li>
                         @endif
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-primary">Déconnecté</button>
+                                <button type="submit" class="btn btn-primary">DÉCONNECTÉ</button>
                             </form>
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Connecté</a>
-                            
+                            <a class="nav-link logIn" href="{{ route('login') }}">CONNECTÉ</a>            
                         </li>
                     @endauth
                 </ul>
